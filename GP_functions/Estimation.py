@@ -181,6 +181,7 @@ def multi_start_estimation(model, likelihood, row_idx, test_y, param_ranges, est
     
     for start in range(num_starts):
         # print(f"Starting optimization run {start+1}/{num_starts}")
+        # initial guess use the sobol and increase  the multi starts' times
         
         initial_guess = [np.quantile([min_val, max_val], quantiles[start]) for (min_val, max_val) in param_ranges]
 
